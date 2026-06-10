@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Sky Radar</string>
+    <string name="status_waiting">SCANNING SKY…</string>
+    <string name="status_line">%1$s %2$03d°  EL %3$+03d°  •  TRK %4$d  •  %5$.0f FPS</string>
+    <string name="hint_point_sky">Point the phone up at the sky</string>
+    <string name="hint_view_blocked">View mostly blocked — aim at open sky</string>
+    <string name="hint_no_compass">No compass sensor — directions are relative</string>
+    <string name="sky_quality">Sky visibility %1$d%%</string>
+    <string name="camera_permission_rationale">Sky Radar uses the camera to scan the sky and detect flying objects. Nothing is recorded or uploaded.</string>
+    <string name="grant_permission">Allow camera</string>
+
+    <string-array name="compass_dirs">
+        <item>N</item>
+        <item>NE</item>
+        <item>E</item>
+        <item>SE</item>
+        <item>S</item>
+        <item>SW</item>
+        <item>W</item>
+        <item>NW</item>
+    </string-array>
+
+    <string-array name="compass_cardinals">
+        <item>N</item>
+        <item>E</item>
+        <item>S</item>
+        <item>W</item>
+    </string-array>
+</resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Gök Radar</string>
+    <string name="status_waiting">GÖKYÜZÜ TARANIYOR…</string>
+    <string name="status_line">%1$s %2$03d°  YÜK %3$+03d°  •  HEDEF %4$d  •  %5$.0f FPS</string>
+    <string name="hint_point_sky">Telefonu gökyüzüne doğrultun</string>
+    <string name="hint_view_blocked">Görüş kapalı — açık gökyüzüne yönelin</string>
+    <string name="hint_no_compass">Pusula sensörü yok — yönler göreceli</string>
+    <string name="sky_quality">Gökyüzü görüşü %1$d%%</string>
+    <string name="camera_permission_rationale">Gök Radar, gökyüzünü tarayıp uçan cisimleri tespit etmek için kamerayı kullanır. Hiçbir şey kaydedilmez veya gönderilmez.</string>
+    <string name="grant_permission">Kameraya izin ver</string>
+
+    <string-array name="compass_dirs">
+        <item>K</item>
+        <item>KD</item>
+        <item>D</item>
+        <item>GD</item>
+        <item>G</item>
+        <item>GB</item>
+        <item>B</item>
+        <item>KB</item>
+    </string-array>
+
+    <string-array name="compass_cardinals">
+        <item>K</item>
+        <item>D</item>
+        <item>G</item>
+        <item>B</item>
+    </string-array>
+</resources>

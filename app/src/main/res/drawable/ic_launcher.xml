@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+
+    <!-- Dark dial -->
+    <path
+        android:fillColor="#06150B"
+        android:pathData="M24,24m-24,0a24,24 0,1 1,48 0a24,24 0,1 1,-48 0" />
+
+    <!-- Outer and inner rings -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#00FF9C"
+        android:strokeWidth="2"
+        android:pathData="M24,24m-18,0a18,18 0,1 1,36 0a18,18 0,1 1,-36 0" />
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#0E8C58"
+        android:strokeWidth="1.5"
+        android:pathData="M24,24m-11,0a11,11 0,1 1,22 0a11,11 0,1 1,-22 0" />
+
+    <!-- Sweep wedge -->
+    <path
+        android:fillColor="#3300FF9C"
+        android:pathData="M24,24 L24,6 A18,18 0 0 1 36.7,11.3 Z" />
+    <path
+        android:strokeColor="#00FF9C"
+        android:strokeWidth="2"
+        android:pathData="M24,24 L36.7,11.3" />
+
+    <!-- Target blip -->
+    <path
+        android:fillColor="#00FF9C"
+        android:pathData="M31,17m-2.5,0a2.5,2.5 0,1 1,5 0a2.5,2.5 0,1 1,-5 0" />
+</vector>
