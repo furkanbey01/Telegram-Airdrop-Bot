@@ -34,6 +34,9 @@ ufuk çizgisidir; tespit edilen her hedef üzerinde iz bırakarak ilerler.
   tarama kolu, yön harfleri (K/D/G/B), hedef izleri.
 - ⛰️ **AR ufuk çizgisi** — kamera görüntüsünün üzerine ufuk ve pusula yönleri
   yansıtılır; ekran dışına çıkan hedefler kenar oklarıyla gösterilir.
+- 🎞️ **Video içe aktarma** — internetten indirdiğiniz veya galerinizdeki drone/uçuş
+  videolarını seçip aynı tespit, takip, radar ve tahmin katmanını video üzerinde
+  çalıştırabilirsiniz.
 
 ## Nasıl çalışır?
 
@@ -51,6 +54,9 @@ ufuk çizgisidir; tespit edilen her hedef üzerinde iz bırakarak ilerler.
 6. **SkyTracker**, en yakın komşu eşleştirme + alfa-beta filtreyle hedefleri
    izler, açısal hızı kestirir ve geleceğe doğru tahmin üretir.
 7. `OverlayView` (AR katmanı) ve `RadarView` (gök kubbe radarı) sonuçları çizer.
+8. **Video modu** aynı luminance/blob dedektörünü `MediaMetadataRetriever` ile
+   örneklenen video karelerine uygular; böylece canlı kamera ve içe aktarılan
+   video aynı analiz boru hattını paylaşır.
 
 ## Proje yapısı
 
@@ -59,7 +65,8 @@ app/src/main/java/com/skyradar/app/
 ├── MainActivity.kt              # CameraX kurulumu, izinler, akış koordinasyonu
 ├── analysis/
 │   ├── Detection.kt             # Kare başına tespit/sonuç modelleri
-│   └── SkyObjectAnalyzer.kt     # Arka plan modeli + clutter + blob çıkarımı
+│   ├── LumaBlobDetector.kt      # Kamera ve video için ortak luminance/blob dedektörü
+│   └── SkyObjectAnalyzer.kt     # CameraX frame adaptörü
 ├── geometry/
 │   └── SkyGeometry.kt           # Piksel ↔ (azimut, yükseliş) dönüşümleri
 ├── sensors/
@@ -80,7 +87,7 @@ bir cihazda çalıştırın (kamera gerektiği için emülatör anlamsızdır).
 **Komut satırı:** JDK 17+, Android SDK 35 ve Gradle 8.9+ ile:
 
 ```bash
-gradle assembleDebug
+./gradlew :app:assembleDebug
 adb install app/build/outputs/apk/debug/app-debug.apk
 ```
 
@@ -95,6 +102,9 @@ adb install app/build/outputs/apk/debug/app-debug.apk
   (manyetometre kalibrasyonu).
 - Alt bardaki **"Gökyüzü görüşü"** yüzdesi düşükse kadrajdaki ağaç/bina
   oranını azaltın.
+- **Video içe aktar** düğmesiyle cihazdaki bir videoyu seçin. İnternetten indirdiğiniz
+  lisanslı/izinli drone görüntülerini galeriye kaydedip uygulamada analiz
+  edebilirsiniz; canlı akışa dönmek için **Canlı kamera** düğmesini kullanın.
 - Telefonu görece sabit tutmak tespit kararlılığını artırır; takip sensör
   destekli olduğundan yavaş tarama hareketleri sorun çıkarmaz.
 
@@ -105,6 +115,9 @@ adb install app/build/outputs/apk/debug/app-debug.apk
   boyutu bilinmeden mutlak hız fiziksel olarak belirlenemez.)
 - Pusula sensörü olmayan cihazlarda yönler göreceli kalır (uygulama bunu alt
   barda belirtir).
+- İçe aktarılan videolarda gerçek cihaz yönelimi bilinmediği için yön/ufuk bilgisi
+  sanal bir kamera geometrisiyle çizilir; tespit, takip ve tahmin mantığı canlı
+  kamerayla aynıdır.
 - Yoğun/karmaşık bulutlarda yanlış pozitifler görülebilir; eşikler
   `SkyObjectAnalyzer` içindeki sabitlerden ayarlanabilir.
 
