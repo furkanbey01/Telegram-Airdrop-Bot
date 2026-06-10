@@ -9,6 +9,12 @@
     <string name="sky_quality">Sky visibility %1$d%%</string>
     <string name="camera_permission_rationale">Sky Radar uses the camera to scan the sky and detect flying objects. Nothing is recorded or uploaded.</string>
     <string name="grant_permission">Allow camera</string>
+    <string name="import_video">Import video</string>
+    <string name="live_camera">Live camera</string>
+    <string name="source_camera">CAM</string>
+    <string name="source_video">VIDEO</string>
+    <string name="hint_video_import">Imported video analysis — directions are virtual</string>
+    <string name="video_import_failed">Video could not be imported or analyzed</string>
 
     <string-array name="compass_dirs">
         <item>N</item>

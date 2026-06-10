@@ -9,6 +9,12 @@
     <string name="sky_quality">Gökyüzü görüşü %1$d%%</string>
     <string name="camera_permission_rationale">Gök Radar, gökyüzünü tarayıp uçan cisimleri tespit etmek için kamerayı kullanır. Hiçbir şey kaydedilmez veya gönderilmez.</string>
     <string name="grant_permission">Kameraya izin ver</string>
+    <string name="import_video">Video içe aktar</string>
+    <string name="live_camera">Canlı kamera</string>
+    <string name="source_camera">KAMERA</string>
+    <string name="source_video">VİDEO</string>
+    <string name="hint_video_import">İçe aktarılan video analizi — yönler sanal</string>
+    <string name="video_import_failed">Video içe aktarılamadı veya analiz edilemedi</string>
 
     <string-array name="compass_dirs">
         <item>K</item>

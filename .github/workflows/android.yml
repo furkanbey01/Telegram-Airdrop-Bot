@@ -30,6 +30,9 @@ jobs:
         with:
           validate-wrappers: true
 
+      - name: Test
+        run: ./gradlew testDebugUnitTest --no-daemon --stacktrace
+
       - name: Build
         run: ./gradlew assembleDebug --no-daemon --stacktrace
 
